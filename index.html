@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Marlon Pedrozo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/Marlon_logo_icon.ico" type="image/x-icon">
+    <!-- CSS Personalizado -->
+    <style>
+        /* Tipografia */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+        }
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background-image: url('assets/img/banner-topo.png');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        /* Seções Alternadas de Fundo */
+        .section-light {
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+        .section-dark {
+            background-color: #f0f8ff;
+            padding: 60px 0;
+        }
+
+        /* Projetos em Andamento */
+        .projects-section {
+            background-color: #d3d3d3;
+            padding: 60px 0;
+        }
+        .projects-section .section-title {
+            color: #1e1e1e;
+        }
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            border-radius: 8px;
+            max-height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #333333;
+            margin-top: 15px;
+        }
+        .project-card p {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Títulos */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 40px;
+            font-size: 2.5rem;
+            color: #0d6efd;
+            position: relative;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #0d6efd;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Tecnologia */
+        .tech-icons i {
+            font-size: 3rem;
+            margin: 20px;
+            color: #0d6efd;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .tech-icons i:hover {
+            color: #1e1e1e;
+            transform: scale(1.2);
+        }
+        .tech-icons p {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Botão Principal */
+        .btn-primary-custom {
+            background-color: #0d6efd;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 600;
+        }
+        .btn-primary-custom:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+        }
+
+        /* Contato */
+        .contact-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+        .contact-info {
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /**/
+        .about-me {
+  padding: 50px 0;
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-me img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.about-me p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+.social-icons a{
+    color: #333333;
+    font-size: 30px;
+    padding: 8px;
+}
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                margin: 40px 0;
+            }
+            .hero-section {
+                height: 400px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Marlon Pedrozo - Técnico em Informática <br> ADS / Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#index.html ">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">PROJETOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificados">CERTIFICADOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">CONTATO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE MIM</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Novidades em Breve!</h1>
+            
+        </div>
+    </section>
+
+    <!-- Tecnologia -->
+    <section class="technology-section section-light">
+        <h2 class="section-title">Tecnologias</h2>
+        <div class="container">
+            <div class="row justify-content-center tech-icons">
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-html5"></i><p>HTML5</p></div>
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-js"></i><p>JavaScript</p></div>
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-react"></i><p>React</p></div>
+                <div class="col-6 col-md-2 text-center"><i class="fab fa-node-js"></i><p>Node.js</p></div>
+                
+            </div>
+        </div>
+    </section>
+
+       <!--sobre mim-->
+       <section class="about-me" id="sobre">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Imagem do lado esquerdo -->
+            <div class="col-md-4">
+              <img src="assets/img/marlon-img.png" alt="Foto sobre mim" class="img-fluid rounded-circle">
+            </div>
+            <!-- Descrição do lado direito -->
+            <div class="col-md-8">
+              <h2>Sobre Mim</h2>
+              <p>
+                Tenho 29 anos e sou marido e pai de uma menina de 4 anos,sou um profissional dedicado e em
+                transição de carreira, fui soldado do exército brasileiro por três anos e sete anos como vigilante na
+                segurança privada. Atualmente, estou buscando uma oportunidade para atuar na área de tecnologia e
+                inovação como programador. Apesar de ter recursos limitados, dedico-me intensamente aos estudos e
+                estou ansioso para contribuir com minhas habilidades em uma equipe no futuro próximo.
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/marlonpedrozo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/marlonpedrozo" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/997404170" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      
+      </section>
+
+    <!-- Projetos em Andamento -->
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="assets/projects/TecBlog/assets/img/imagem2.jpg" alt="Projeto 1">
+                        <h3>Projeto Blog Técnico</h3>
+                        <p>Um blog criado para falar sobre as novidades na area da Tecnologia desenvolvido com Bootstrap.</p>
+                        <a href="assets/projects/TecBlog/assets/html/index.html" target="_blank" rel="noopener noreferrer">Ver mais...</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="assets/projects/unleash_the_archers.github.io/img/banner tour.jpg" alt="Projeto 2">
+                        <h3>Site para Banda de rock</h3>
+                        <p>Site com as informações sobre a banda, fotos, media , compra e venda de produtos. </p>
+                        <a href="https://marlonpedrozo.github.io/unleash_the_archers.github.io/" target="_blank" rel="noopener noreferrer">ver mais...</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="assets/projects/Museu Nacional/img/museu.png" alt="Projeto 3">
+                        <h3>Site do Museu nacional</h3>
+                        <p>Sites para exposição do museu nacional onde é possivel gendar visitas seção de fotos, video promocional do museu.</p>
+                        <a href="assets/projects/Museu Nacional/index.html" target="_blank" rel="noopener noreferrer">Ver mais...</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Certificados -->
+    <section class="section-light" id="certificados">
+        <h2 class="section-title">Certificados Relevantes</h2>
+        <div class="container">
+            <table class="certificates-table">
+                <thead>
+                    <tr>
+                        <th>Certificado</th>
+                        <th>Instituição</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tecnico em Informática</td>
+                        <td>Informatize</td>
+                        <td><a href="#" target="_blank">Baixar</a></td>
+                    </tr>
+                    <tr>
+                        <td>Desenvolvimento Web</td>
+                        <td>DevMedia</td>
+                        <td><a href="assets/docs/Certificado-frontend-devmedia.pdf" target="_blank">Baixar</a></td>
+                    </tr>
+                    <tr>
+                        <td>Bootcamp Front-End</td>
+                        <td>Digital  Innovation One</td>
+                        <td><a href="assets/docs/DIO - Certificado (BOOTCAMP Ifood).pdf" target="_blank">Baixar</a></td>
+                    </tr>
+                    <tr>
+                        <td>Treinamento em Suporte Técnico</td>
+                        <td>UDEMI</td>
+                        <td><a href="assets/docs/Certificado (Suporte Tecnico).pdf" target="_blank">Baixar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- Contato -->
+    <section class="contact-section" id="contato">
+        <h2 class="section-title">Vamos Conversar</h2>
+        <div class="container">
+            <p class="contact-info">
+                <i class="fa-solid fa-envelope"></i> Email: marlonpedrozofelix@gmail.com
+            </p>
+            
+            <form action="mailto:marlonpedrozofelix@gmail.com" method="POST" enctype="text/plain">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Marlon Pedrozo. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
